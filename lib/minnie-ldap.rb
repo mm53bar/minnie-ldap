@@ -1,7 +1,7 @@
 require "minnie-ldap/version"
 
 module Minnie
-  module Ldap
-    # Your code goes here...
+  module User
+    autoload :Ldap, 'minnie/user/ldap'
   end
 end
