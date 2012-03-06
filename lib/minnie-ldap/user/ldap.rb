@@ -3,8 +3,10 @@ require 'net-ldap'
 module Minnie
   module User
     module Ldap
-      extend ActiveSupport::Concern    
-
+      def included(klass)
+        klass.extend ClassMethods
+      end
+      
       module ClassMethods
         def authenticate(username, password, domain = 'corp.ads')
           if bind(username, password, domain)
