@@ -3,7 +3,7 @@ require 'net-ldap'
 module Minnie
   module User
     module Ldap
-      def included(klass)
+      def self.included(klass)
         klass.extend ClassMethods
       end
       
