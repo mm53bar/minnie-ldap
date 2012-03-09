@@ -9,6 +9,7 @@ module Minnie
       
       module ClassMethods
         def authenticate(username, password, domain = 'corp.ads')
+          return false unless username && password
           if bind(username, password, domain)
             return find_or_create_by_username username
           else
